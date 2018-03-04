@@ -54,7 +54,7 @@ def CNN_model():
 model = CNN_model()
 model.fit(X_train,y_train,epochs=10,batch_size=100)
 model.save("models/CNN_Digit_Recognizer_model_batch_100.h5")
-model = load_model("CNN_Digit_Recognizer_model_batch_100.h5")
+model = load_model("models/CNN_Digit_Recognizer_model_batch_100.h5")
 
 #use the model for prediction
 y_test = [[model.predict_classes(X_test[i].reshape(1,1,28,28))[0] for i in range(X_test.shape[0])]]
